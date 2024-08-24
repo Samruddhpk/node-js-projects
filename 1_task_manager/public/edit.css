@@ -1,0 +1,57 @@
+.container {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.single-task-form {
+  background-color: var(--text-color);
+  color: #333;
+  padding: 2rem;
+  border-radius: 5px;
+  max-width: 600px;
+}
+.single-task-form h4 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1.2px;
+}
+.form-edit-control {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  justify-items: start;
+  gap: 0 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.task-edit-id {
+  font-size: 0.8rem;
+}
+.task-edit-name {
+  background-color: #e5dbff;
+}
+
+.task-edit-btn {
+  width: 100%;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+}
+
+.link-btn {
+  margin-top: 1rem;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --bg-color: #6741d9;
+  --primary-color: #862e9c;
+  --text-color: #f8f9fa;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+button,
+input {
+  height: 40px;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  border: transparent;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+section {
+  min-height: 100vh;
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-form {
+  background-color: var(--text-color);
+  border-radius: 5px;
+  color: #333;
+  padding: 2rem;
+  width: 500px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.task-form h4 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.5px;
+}
+
+.form-control {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.form-input {
+  width: 300px;
+  background-color: #e5dbff;
+}
+
+.btn {
+  font-weight: 700;
+  padding: 0 1rem;
+  cursor: pointer;
+  background-color: #7950f2;
+  color: var(--text-color);
+}
+
+.form-alert {
+  text-align: center;
+  text-transform: capitalize;
+  visibility: hidden;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.danger {
+  color: orangered;
+}
+
+.success {
+  color: green;
+}
+
+/* tasks */
+.empty-list {
+  text-align: center;
+  letter-spacing: 1.2px;
+  font-size: 1.2rem;
+}
+
+.tasks-container {
+  background-color: var(--text-color);
+  width: 500px;
+  max-width: 500px;
+  color: #333;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.tasks {
+  padding: 1rem;
+}
+
+.single-task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 0.5px dotted lightgray;
+}
+.single-task h5 {
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.single-task h5 span {
+  margin-right: 0.5rem;
+}
+.icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-icon {
+  color: orangered;
+}
+
+.delete-icon {
+  color: var(--bg-color);
+}
+
+.show-loading {
+  display: block;
+}
+
+.show-completed {
+  text-decoration: line-through;
+}

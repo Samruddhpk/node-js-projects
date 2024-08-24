@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "ee120329-3243-4732-a208-09eba4ad5187",
+		"name": "4_JOBS_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19884025"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "GET ALL JOBS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4ZDgxNGEzYjI5ZjMwZDBiODE3MTYiLCJuYW1lIjoicGV0ZXIiLCJpYXQiOjE3MjIzNDEzOTcsImV4cCI6MTcyNDkzMzM5N30.S7exi5nR_ARtCojX9O7aX7edv1wIGOmIlhD3NugskZA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/jobs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE JOB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmE4ZDgxNGEzYjI5ZjMwZDBiODE3MTYiLCJuYW1lIjoicGV0ZXIiLCJpYXQiOjE3MjIzNDEzOTcsImV4cCI6MTcyNDkzMzM5N30.S7exi5nR_ARtCojX9O7aX7edv1wIGOmIlhD3NugskZA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"facebook\",\r\n    \"position\":\"fullstack dev\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/jobs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET JOB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/jobs/66a8de62167fa46ba08ed3e7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"jobs",
+								"66a8de62167fa46ba08ed3e7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE JOB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"tata services\",\r\n    \"position\":\"HTML dev\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/jobs/66a8e068b5961084c38d9662",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"jobs",
+								"66a8e068b5961084c38d9662"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE JOB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/jobs/66a8e068b5961084c38d9662",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"jobs",
+								"66a8e068b5961084c38d9662"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"pm.globals.set(\"accessToken\",jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"peter@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"pm.globals.set(\"accessToken\",jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"peter\",\r\n    \"email\":\"peter1@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

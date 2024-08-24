@@ -1,0 +1,63 @@
+TODO: Take down previous notes here.
+
+
+***** Cookie *****
+
+- storing token in browser as Cookie
+- httpOnly = browser stores it and sends back to server
+- to get that token from cookie from browser - server needs a package called 'cookie-parser'
+- https://expressjs.com/en/4x/api.html#res.cookie
+- it has secured & signed flags
+    - req.signedCookies
+    - use them only in production => process.env.NODE_ENV
+- if sending large size data in cookie,it has size of = 4096 bytes
+- if front end is in same domain - it is to access and send cookie back to server
+- if front-end is not on the same domain - i.e CRA - React app / vite where it runs on diff hosts.. used cors() for connection..but for cookies its not possible
+    - may use proxy(s)
+
+- Solution: DEVELOPMENT
+    - For CRA
+        - package.json(front-end)
+            - "proxy":"http://localhost:5000"
+        - restart the server
+        - use directed url when sending request
+            - const url = '/api/v1/auth/login'
+            - no need of localhost...
+            - should be done for every requests coming from react.
+    - Remember: ONLY WORKS IN DEVELOPMENT
+    - Good! Thats it.
+
+- Solution: PRODUCTION
+    - depends on where we r hosting app is - heroku or etc.
+    - '_redirects' - files create
+    - we r basically re-routing these requests to the hosted site where our backend/server is deployed.
+        
+        
+**** cors() ****
+- if frontend is in same domain  - no need to add cors() =>express.static('/public')
+- if not => add it
+
+**** USER ROUTES ****
+
+- till now all routes are public routes
+- must create private routes / protected routes
+- refer userController & routes 
+
+
+
+GOTCHAS
+
+- first cope up with authentication & move forward 
+- AUTH & USER Models are for almost every projects
+
+
+
+MONGOOSE VIRTUALS
+- use it to access documents from another collections
+    - to get a product with all its reviews
+    - productController
+        - get single product
+            - populate('reviews')
+    - product Schema
+        - add VIRTUALS
+        
